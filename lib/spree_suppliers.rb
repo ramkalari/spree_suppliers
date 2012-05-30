@@ -14,7 +14,7 @@ module SpreeSuppliers
         belongs_to :supplier
       end
 
-      Admin::OrdersController.class_eval do
+      Spree::Admin::OrdersController.class_eval do
         def show
           load_order
           # optional fee that admin can charge to sell suppliers products for them
@@ -104,7 +104,7 @@ module SpreeSuppliers
       end
 
 
-      Admin::ProductsController.class_eval do
+      Spree::Admin::ProductsController.class_eval do
         before_filter :load
         before_filter :load_index, :only => [:index]
         before_filter :edit_before, :only => [:edit]
