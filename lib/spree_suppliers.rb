@@ -6,7 +6,7 @@ module SpreeSuppliers
     config.autoload_paths += %W(#{config.root}/lib)
     def self.activate
 
-      ::LineItem.class_eval do
+      Spree::LineItem.class_eval do
         has_many :invoice_items
       end
 
