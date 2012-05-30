@@ -181,7 +181,7 @@ module SpreeSuppliers
         has_and_belongs_to_many :suppliers
       end
 
-      User.class_eval do
+      Spree::User.class_eval do
         has_one :supplier
       end
 
