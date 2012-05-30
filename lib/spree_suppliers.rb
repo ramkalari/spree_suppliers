@@ -10,7 +10,7 @@ module SpreeSuppliers
         has_many :invoice_items
       end
 
-      Image.class_eval do
+      Spree::Image.class_eval do
         belongs_to :supplier
       end
 
@@ -58,7 +58,7 @@ module SpreeSuppliers
         end
       end
 
-      Order.class_eval do
+      Spree::Order.class_eval do
         has_many :supplier_invoices
         def generate_invoices(order)
           @order = order
@@ -173,11 +173,11 @@ module SpreeSuppliers
         end
       end
 
-      Product.class_eval do
+      Spree::Product.class_eval do
         belongs_to :supplier
       end
 
-      Taxon.class_eval do
+      Spree::Taxon.class_eval do
         has_and_belongs_to_many :suppliers
       end
 
